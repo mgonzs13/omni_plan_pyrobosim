@@ -12,8 +12,6 @@ ROS 2 integration of [OmniPlan](https://github.com/mgonzs13/omni_plan) with [pyr
 
 ## Installation
 
-Requires ROS 2 Jazzy.
-
 ```shell
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws
