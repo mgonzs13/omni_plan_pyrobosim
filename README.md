@@ -42,7 +42,7 @@ ros2 launch omni_plan_pyrobosim_bringup warehouse.launch.py robot_number:=3
 
 ## Docker
 
-The `Dockerfile` builds on the `omniplan:latest` base image and includes the pyrobosim dependencies and worlds:
+The `Dockerfile` builds on the `omni_plan:latest` base image and includes the pyrobosim dependencies and worlds:
 
 ```shell
 docker build -t omni-plan-pyrobosim .
@@ -52,12 +52,12 @@ docker build -t omni-plan-pyrobosim .
 
 The experiment code and aggregated results for each paper live in separate repositories:
 
-| Paper | Repository |
-|---|---|
-| Full OmniPlan stack: planner × MRTA × VAL × dispatcher | _TBD_ |
-| Planner × reactive replanning strategy (MRTA) | _TBD_ |
-| Planner × knowledge representation | _TBD_ |
-| Navigation variants × planner × MRTA | _TBD_ |
+| Paper                                                  | Repository |
+| ------------------------------------------------------ | ---------- |
+| Full OmniPlan stack: planner × MRTA × VAL × dispatcher | _TBD_      |
+| Planner × reactive replanning strategy (MRTA)          | _TBD_      |
+| Planner × knowledge representation                     | _TBD_      |
+| Navigation variants × planner × MRTA                   | _TBD_      |
 
 Each repository pins the commit it was produced with and keeps its aggregated results,
 figures and LaTeX tables under `analysis_output/`.

@@ -1,5 +1,5 @@
-# Use omniplan as base image (Ubuntu 24)
-FROM omniplan:latest
+# Use omni_plan as base image (Ubuntu 24)
+FROM omni_plan:latest
 
 # Set working directory
 WORKDIR /root/ros2_ws
