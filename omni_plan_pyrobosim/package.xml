@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>omni_plan_pyrobosim</name>
+    <version>1.0.0</version>
+    <description>Pyrobosim demo for OmniPlan</description>
+    <maintainer email="mgons@unileon.es">Miguel Ángel González Santamarta</maintainer>
+    <license>GPL-3.0</license>
+    <buildtool_depend>ament_cmake</buildtool_depend>
+    <depend>omni_plan</depend>
+    <depend>omni_plan_knowledge_base</depend>
+    <depend>omni_plan_knowledge_graph</depend>
+    <depend>knowledge_graph</depend>
+    <depend>pyrobosim_msgs</depend>
+    <depend>knowledge_graph_msgs</depend>
+    <depend>omni_plan_pyrobosim_msgs</depend>
+    <depend>rclcpp_action</depend>
+    <depend>yasmin_ros</depend>
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>

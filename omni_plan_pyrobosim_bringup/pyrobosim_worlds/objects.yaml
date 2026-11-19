@@ -1,0 +1,99 @@
+# Warehouse shelf object
+shelf:
+  footprint:
+    type: box
+    dims: [2.0, 0.6]
+    height: 2.2
+  color: [0.7, 0.7, 0.2]
+
+# Warehouse package object
+package:
+  footprint:
+    type: box
+    dims: [0.25, 0.18]
+    height: 0.15
+  color: [0.8, 0.5, 0.2]
+
+# Object categories for the pyrobosim restaurant world
+dish_order:
+  footprint:
+    type: circle
+    radius: 0.15
+  color: [0.9, 0.5, 0.3]
+
+pasta_dish:
+  footprint:
+    type: circle
+    radius: 0.12
+  color: [0.9, 0.8, 0.3]
+
+salad_bowl:
+  footprint:
+    type: circle
+    radius: 0.1
+  color: [0.2, 0.8, 0.2]
+
+soup_bowl:
+  footprint:
+    type: circle
+    radius: 0.1
+  color: [0.85, 0.55, 0.1]
+
+steak_plate:
+  footprint:
+    type: circle
+    radius: 0.12
+  color: [0.5, 0.2, 0.1]
+
+drink_order:
+  footprint:
+    type: circle
+    radius: 0.1
+    height: 0.15
+  color: [0.5, 0.8, 1.0]
+
+water_glass:
+  footprint:
+    type: circle
+    radius: 0.04
+    height: 0.15
+  color: [0.5, 0.8, 1.0]
+
+wine_glass:
+  footprint:
+    type: circle
+    radius: 0.04
+    height: 0.2
+  color: [0.6, 0.1, 0.15]
+
+beer_glass:
+  footprint:
+    type: circle
+    radius: 0.04
+    height: 0.18
+  color: [0.9, 0.7, 0.1]
+
+coffee_cup:
+  footprint:
+    type: circle
+    radius: 0.04
+    height: 0.12
+  color: [0.35, 0.18, 0.05]
+
+bread_basket:
+  footprint:
+    type: box
+    dims: [0.15, 0.1]
+  color: [0.8, 0.65, 0.3]
+
+tray:
+  footprint:
+    type: box
+    dims: [0.35, 0.25]
+  color: [0.3, 0.3, 0.3]
+
+waste:
+  footprint:
+    type: circle
+    radius: 0.08
+  color: [0.3, 0.25, 0.2]

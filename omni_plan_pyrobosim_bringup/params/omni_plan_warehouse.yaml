@@ -1,0 +1,43 @@
+/omni_plan_node:
+  ros__parameters:
+    enable_viewer_pub: true
+
+    pddl_manager:
+      plugin: "omni_plan_knowledge_graph/KgPddlManager"
+      domain_requirements:
+        - "typing"
+        - "negative-preconditions"
+        - "durative-actions"
+
+    planner:
+      plugin: "omni_plan_mrta/MrtaPlanner"
+      robot_type: "robot"
+      planner_plugin: "omni_plan_popf/PopfPlanner"
+      sub_planner:
+        disable_best_first: false
+        skip_ehc: true
+        standard_ehc: false
+        disable_helpful_pruning: false
+        disable_compression_safe: false
+        disable_tie_breaking_rpg: true
+        sort_initial_layer: true
+        disable_tie_breaking_search: false
+        full_ff_helpful: false
+        total_order: false
+      allocator_plugin: "omni_plan_mrta/CbbaAllocator"
+      allocator:
+        use_h_max: true
+
+    plan_dispatcher:
+      plugin: "omni_plan_dispatcher/ParallelPlanDispatcher"
+      cancel_on_abort: false
+      cancel_on_new_goals: false
+      execution_threads: -1
+
+    actions_plugins:
+      - "omni_plan_pyrobosim/NavigateLocalAction"
+      - "omni_plan_pyrobosim/NavigateGlobalAction"
+      - "omni_plan_pyrobosim/NavigateToChargerAction"
+      - "omni_plan_pyrobosim/PickAction"
+      - "omni_plan_pyrobosim/PlaceAction"
+      - "omni_plan_pyrobosim/ChargeAction"

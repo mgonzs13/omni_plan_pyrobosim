@@ -1,0 +1,624 @@
+# Pyrobosim warehouse world definition
+
+params:
+  name: warehouse_world
+  inflation_radius: 0.05
+  object_radius: 0.02
+  wall_height: 2.5
+
+metadata:
+  locations:
+    - $PWD/locations.yaml
+  objects:
+    - $PWD/objects.yaml
+
+robots:
+  - name: worker1
+    radius: 0.18
+    height: 0.5
+    location: entrance_table1
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker2
+    radius: 0.18
+    height: 0.5
+    location: storage_shelf1
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker3
+    radius: 0.18
+    height: 0.5
+    location: prep_table1
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker4
+    radius: 0.18
+    height: 0.5
+    location: delivery_table1
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker5
+    radius: 0.18
+    height: 0.5
+    location: storage_shelf3
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker6
+    radius: 0.18
+    height: 0.5
+    location: charger1
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker7
+    radius: 0.18
+    height: 0.5
+    location: storage_shelf6
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker8
+    radius: 0.18
+    height: 0.5
+    location: charger2
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker9
+    radius: 0.18
+    height: 0.5
+    location: prep_table3
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: worker10
+    radius: 0.18
+    height: 0.5
+    location: storage_shelf4
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+rooms:
+  - name: entrance
+    footprint:
+      type: box
+      dims: [4.0, 4.0]
+    pose:
+      position:
+        x: -10.0
+        y: 8.0
+    color: [0.8, 0.8, 0.2]
+
+  - name: package_preparation
+    footprint:
+      type: box
+      dims: [6.0, 4.0]
+    pose:
+      position:
+        x: 0.0
+        y: 0.0
+    color: [0.2, 0.8, 0.8]
+
+  - name: storage
+    footprint:
+      type: box
+      dims: [10.0, 8.0]
+    pose:
+      position:
+        x: 0.0
+        y: 8.0
+    color: [0.7, 0.7, 0.7]
+
+  - name: delivery
+    footprint:
+      type: box
+      dims: [4.0, 4.0]
+    pose:
+      position:
+        x: 8.0
+        y: 0.0
+    color: [0.9, 0.6, 0.2]
+
+hallways:
+  - room_start: entrance
+    room_end: storage
+    width: 1.5
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+  - room_start: package_preparation
+    room_end: storage
+    width: 2.0
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+  - room_start: package_preparation
+    room_end: delivery
+    width: 1.5
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+locations:
+  # Entrance tables for incoming packages
+  - name: entrance_table1
+    category: table
+    parent: entrance
+    pose:
+      position:
+        x: -1.0
+        y: 1.0
+      relative_to: entrance
+
+  - name: entrance_table2
+    category: table
+    parent: entrance
+    pose:
+      position:
+        x: 1.0
+        y: 1.0
+      relative_to: entrance
+
+  # Package preparation tables
+  - name: prep_table1
+    category: table
+    parent: package_preparation
+    pose:
+      position:
+        x: -1.5
+        y: 0.5
+      relative_to: package_preparation
+
+  - name: prep_table2
+    category: table
+    parent: package_preparation
+    pose:
+      position:
+        x: 0.0
+        y: 0.5
+      relative_to: package_preparation
+
+  - name: prep_table3
+    category: table
+    parent: package_preparation
+    pose:
+      position:
+        x: 1.5
+        y: 0.5
+      relative_to: package_preparation
+
+  # Storage room shelves
+  - name: storage_shelf1
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: -3.0
+        y: 2.5
+      relative_to: storage
+
+  # Chargers
+  # Chargers
+  - name: charger1
+    category: charger
+    parent: entrance
+    pose:
+      position:
+        x: 0.0
+        y: -1.7
+      relative_to: entrance
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  - name: charger2
+    category: charger
+    parent: storage
+    pose:
+      position:
+        x: -3.5
+        y: -3.7
+      relative_to: storage
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  - name: charger3
+    category: charger
+    parent: package_preparation
+    pose:
+      position:
+        x: 0.0
+        y: -1.7
+      relative_to: package_preparation
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  - name: charger4
+    category: charger
+    parent: delivery
+    pose:
+      position:
+        x: 0.0
+        y: -1.7
+      relative_to: delivery
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  - name: storage_shelf2
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: 0.0
+        y: 2.5
+      relative_to: storage
+
+  - name: storage_shelf3
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: 3.0
+        y: 2.5
+      relative_to: storage
+
+  - name: storage_shelf4
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: -3.0
+        y: -2.5
+      relative_to: storage
+
+  - name: storage_shelf5
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: 0.0
+        y: -2.5
+      relative_to: storage
+
+  - name: storage_shelf6
+    category: shelf
+    parent: storage
+    pose:
+      position:
+        x: 3.0
+        y: -2.5
+      relative_to: storage
+
+  # Delivery room tables
+  - name: delivery_table1
+    category: table
+    parent: delivery
+    pose:
+      position:
+        x: -1.0
+        y: 1.0
+      relative_to: delivery
+
+  - name: delivery_table2
+    category: table
+    parent: delivery
+    pose:
+      position:
+        x: 1.0
+        y: 1.0
+      relative_to: delivery
+
+objects:
+  - name: tray1
+    category: tray
+    parent: storage_shelf6

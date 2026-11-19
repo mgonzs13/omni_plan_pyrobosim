@@ -1,0 +1,381 @@
+# Pyrobosim restaurant world definition
+#
+# Layout:
+#   ┌──────────┐     ┌──────────────────────────────────┐
+#   │  Trash   │─────│            Kitchen                │
+#   └──────────┘     └───────────────┬──────────────────┘
+#                                    │
+#                    ┌───────────────┴──────────────────┐
+#   ┌──────────┐    │         Dining Room               │
+#   │   Bar    │─────│  [table1] [table2] [table3]      │
+#   └──────────┘    │  [table4] [table5] [table6]      │
+#                    └───────────────┬──────────────────┘
+#                                    │
+#                    ┌───────────────┴──────────────────┐
+#                    │          Entrance                 │
+#                    └──────────────────────────────────┘
+
+params:
+  name: restaurant_world
+  inflation_radius: 0.05
+  object_radius: 0.02
+  wall_height: 2.5
+
+metadata:
+  locations:
+    - $PWD/locations.yaml
+  objects:
+    - $PWD/objects.yaml
+
+robots:
+  - name: waiter1
+    radius: 0.18
+    height: 0.5
+    location: kitchen_counter
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: waiter2
+    radius: 0.18
+    height: 0.5
+    location: table4
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+  - name: waiter3
+    radius: 0.18
+    height: 0.5
+    location: bar_counter0
+    max_linear_velocity: 1.2
+    max_angular_velocity: 2.0
+    max_linear_acceleration: 0.5
+    max_angular_acceleration: 1.0
+    path_planner:
+      type: astar
+      grid_resolution: 0.1
+      grid_inflation_radius: 0.1
+    path_executor:
+      type: constant_velocity
+      linear_velocity: 0.5
+      dt: 0.1
+    grasp_generator:
+      type: parallel_grasp
+      max_width: 0.175
+      depth: 0.1
+      height: 0.04
+      width_clearance: 0.01
+      depth_clearance: 0.01
+    action_execution_options:
+      navigate:
+        delay: 0.1
+        success_probability: 1.0
+        battery_usage: 1.0
+      pick:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+      place:
+        delay: 0.5
+        success_probability: 1.0
+        battery_usage: 0.5
+
+rooms:
+  - name: kitchen
+    footprint:
+      type: box
+      dims: [8.0, 5.0]
+    pose:
+      position:
+        x: 0.0
+        y: 13.0
+    color: [0.0, 1.0, 0.0]
+
+  - name: dining_room
+    footprint:
+      type: box
+      dims: [10.0, 8.0]
+    pose:
+      position:
+        x: 0.0
+        y: 4.5
+    color: [0.0, 0.0, 1.0]
+
+  - name: bar
+    footprint:
+      type: box
+      dims: [4.0, 4.0]
+    pose:
+      position:
+        x: -8.5
+        y: 4.5
+    color: [0.5, 0.5, 0.5]
+
+  - name: entrance
+    footprint:
+      type: box
+      dims: [6.0, 3.0]
+    pose:
+      position:
+        x: 0.0
+        y: -2.5
+    color: [1.0, 0.0, 0.0]
+
+  - name: trash_room
+    footprint:
+      type: box
+      dims: [4.0, 4.0]
+    pose:
+      position:
+        x: -7.0
+        y: 13.0
+    color: [0.15, 0.15, 0.15]
+
+hallways:
+  - room_start: kitchen
+    room_end: dining_room
+    width: 1.5
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+  - room_start: bar
+    room_end: dining_room
+    width: 1.2
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+  - room_start: dining_room
+    room_end: entrance
+    width: 1.5
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+  - room_start: trash_room
+    room_end: kitchen
+    width: 1.0
+    conn_method: auto
+    is_open: true
+    is_locked: false
+
+locations:
+  # Kitchen locations
+  - name: kitchen_counter
+    category: counter
+    parent: kitchen
+    pose:
+      position:
+        x: 0.0
+        y: 1.5
+      relative_to: kitchen
+
+  - name: charger1
+    category: charger
+    parent: kitchen
+    pose:
+      position:
+        x: -2.25
+        y: -2.1
+      relative_to: kitchen
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  # Bar locations
+  - name: bar_counter0
+    category: bar_counter
+    parent: bar
+    pose:
+      position:
+        x: 0.0
+        y: 0.75
+      relative_to: bar
+
+  - name: charger2
+    category: charger
+    parent: bar
+    pose:
+      position:
+        x: 0.0
+        y: -1.6
+      relative_to: bar
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  # Trash room locations
+  - name: dumpster
+    category: dumpster
+    parent: trash_room
+    pose:
+      position:
+        x: -1.0
+        y: 1.0
+      relative_to: trash_room
+
+  - name: charger3
+    category: charger
+    parent: trash_room
+    pose:
+      position:
+        x: 0.0
+        y: -1.6
+      relative_to: trash_room
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  # Dining room tables — 2 rows of 3
+  - name: table1
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: -3.0
+        y: 1.5
+      relative_to: dining_room
+
+  - name: table2
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: 0.0
+        y: 1.5
+      relative_to: dining_room
+
+  - name: table3
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: 3.0
+        y: 1.5
+      relative_to: dining_room
+
+  - name: table4
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: -3.0
+        y: -1.5
+      relative_to: dining_room
+
+  - name: table5
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: 0.0
+        y: -1.5
+      relative_to: dining_room
+
+  - name: table6
+    category: table
+    parent: dining_room
+    pose:
+      position:
+        x: 3.0
+        y: -1.5
+      relative_to: dining_room
+
+  - name: charger4
+    category: charger
+    parent: dining_room
+    pose:
+      position:
+        x: 2.75
+        y: -3.6
+      relative_to: dining_room
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+  # Entrance
+  - name: reception
+    category: reception_desk
+    parent: entrance
+    pose:
+      position:
+        x: 0.0
+        y: 0.5
+      relative_to: entrance
+
+  - name: charger5
+    category: charger
+    parent: entrance
+    pose:
+      position:
+        x: -2.0
+        y: -1.2
+      relative_to: entrance
+    is_open: false
+    is_locked: true
+    is_charger: true
+
+objects:
+  - name: tray1
+    category: tray
+    parent: reception

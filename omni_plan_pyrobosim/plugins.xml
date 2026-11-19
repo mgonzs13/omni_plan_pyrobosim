@@ -1,0 +1,86 @@
+<class_libraries>
+    <library path="navigate_local_action">
+        <class name="omni_plan_pyrobosim/NavigateLocalAction"
+               type="NavigateLocalAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Navigate waiter robot between restaurant locations in pyrobosim</description>
+        </class>
+    </library>
+    <library path="navigate_global_action">
+        <class name="omni_plan_pyrobosim/NavigateGlobalAction"
+               type="NavigateGlobalAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Navigate waiter robot between restaurant locations in pyrobosim</description>
+        </class>
+    </library>
+    <library path="navigate_to_charger_action">
+        <class name="omni_plan_pyrobosim/NavigateToChargerAction"
+               type="NavigateToChargerAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Navigate waiter robot to charger location in pyrobosim</description>
+        </class>
+    </library>
+    <library path="pick_action">
+        <class name="omni_plan_pyrobosim/PickAction"
+               type="PickAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Pick up item (dish/drink) in pyrobosim restaurant</description>
+        </class>
+    </library>
+    <library path="place_action">
+        <class name="omni_plan_pyrobosim/PlaceAction"
+               type="PlaceAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Place item on table/counter in pyrobosim restaurant</description>
+        </class>
+    </library>
+    <library path="take_order_action">
+        <class name="omni_plan_pyrobosim/TakeOrderAction"
+               type="TakeOrderAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Take order from a table and relay it to the kitchen</description>
+        </class>
+    </library>
+    <library path="charge_action">
+        <class name="omni_plan_pyrobosim/ChargeAction"
+               type="ChargeAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Charge the waiter robot's battery at a charger location until fully charged</description>
+        </class>
+    </library>
+    <library path="store_package_action">
+        <class name="omni_plan_pyrobosim/StorePackageAction"
+               type="StorePackageAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Store a prepared package on a shelf in the restaurant</description>
+        </class>
+    </library>
+    <library path="prepare_package_action">
+        <class name="omni_plan_pyrobosim/PreparePackageAction"
+               type="PreparePackageAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Prepare a package at a preparation table in the restaurant</description>
+        </class>
+    </library>
+    <library path="deliver_package_action">
+        <class name="omni_plan_pyrobosim/DeliverPackageAction"
+               type="DeliverPackageAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Deliver a prepared package to a delivery table in the restaurant</description>
+        </class>
+    </library>
+    <library path="navigate_bare_action">
+        <class name="omni_plan_pyrobosim/NavigateBareAction"
+               type="NavigateBareAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Navigate between any two locations without room or connectivity constraints</description>
+        </class>
+    </library>
+    <library path="navigate_connected_action">
+        <class name="omni_plan_pyrobosim/NavigateConnectedAction"
+               type="NavigateConnectedAction"
+               base_class_type="omni_plan::pddl::Action">
+            <description>Navigate between locations with explicit connectivity constraints</description>
+        </class>
+    </library>
+</class_libraries>
